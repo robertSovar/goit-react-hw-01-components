@@ -1,3 +1,9 @@
+import Profile from './profile/Profile';
+
 export const App = () => {
-  return <div>Test page</div>;
+  return (
+    <div>
+      <Profile></Profile>
+    </div>
+  );
 };
