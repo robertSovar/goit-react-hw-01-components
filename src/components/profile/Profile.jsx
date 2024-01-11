@@ -6,6 +6,9 @@ const Profile = () => {
   const userAvatar = user.avatar;
   const userTag = user.tag;
   const userLocation = user.location;
+  const followers = user.stats.followers;
+  const views = user.stats.views;
+  const likes = user.stats.likes;
 
   return (
     <div className="profile">
@@ -18,16 +21,16 @@ const Profile = () => {
 
       <ul className="stats">
         <li>
-          <span className="label">Followers</span>
-          <span className="quantity">1000</span>
+          <span className="label">Followers: </span>
+          <span className="quantity">{followers}</span>
         </li>
         <li>
-          <span className="label">Views</span>
-          <span className="quantity">2000</span>
+          <span className="label">Views: </span>
+          <span className="quantity">{views}</span>
         </li>
         <li>
-          <span className="label">Likes</span>
-          <span className="quantity">3000</span>
+          <span className="label">Likes: </span>
+          <span className="quantity">{likes}</span>
         </li>
       </ul>
     </div>
@@ -39,6 +42,9 @@ Profile.propTypes = {
   userAvatar: PropTypes.string,
   userTag: PropTypes.string,
   userLocation: PropTypes.string,
+  followers: PropTypes.number,
+  views: PropTypes.number,
+  likes: PropTypes.number,
 };
 
 export default Profile;
