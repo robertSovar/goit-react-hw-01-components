@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import user from '../user.json';
+import styles from '../profile/Profile.module.css';
 
 const Profile = ({
   userName,
@@ -17,19 +18,19 @@ const Profile = ({
   ];
 
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={userAvatar} alt="User avatar" className="avatar" />
-        <p className="name">{userName}</p>
-        <p className="tag">{userTag}</p>
-        <p className="location">{userLocation}</p>
+    <div className={styles.profile}>
+      <div className={styles.description}>
+        <img src={userAvatar} alt="User avatar" className={styles.avatar} />
+        <p className={styles.name}>{userName}</p>
+        <p className={styles.tag}>{userTag}</p>
+        <p className={styles.location}>{userLocation}</p>
       </div>
 
-      <ul className="stats">
+      <ul className={styles.stats}>
         {statsData.map((stat, index) => (
           <li key={index}>
-            <span className="label">{`${stat.label}: `}</span>
-            <span className="quantity">{stat.quantity}</span>
+            <span className={styles.label}>{`${stat.label}: `}</span>
+            <span className={styles.quantity}>{stat.quantity}</span>
           </li>
         ))}
       </ul>

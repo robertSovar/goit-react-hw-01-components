@@ -1,17 +1,18 @@
 import data from '../data.json';
 import PropTypes from 'prop-types';
+import styles from '../statistics/Statistics.module.css';
 
 const Statistics = ({ title, stats = data, condition }) => {
   return (
-    <section className="statistics">
-      {condition && <h2 className="title">{title}</h2>}
+    <section className={styles.statistics}>
+      {condition && <h2 className={styles.title}>{title}</h2>}
 
-      <ul className="stat-list">
+      <ul className={styles.statList}>
         {stats.map((item, index) => {
           return (
-            <li className="item" key={index}>
-              <span className="label">{item.label}</span>
-              <span className="percentage">{item.percentage}%</span>
+            <li className={styles.item} key={index}>
+              <span className={styles.label}>{item.label}</span>
+              <span className={styles.percentage}>{item.percentage}%</span>
             </li>
           );
         })}

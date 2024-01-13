@@ -1,0 +1,11 @@
+.transactionsHistory {
+  background-color: rgb(51, 133, 133);
+  width: 100%;
+  padding: 150px;
+}
+
+.tableData {
+  background-color: rgb(64, 92, 8);
+  margin-left: 15px;
+  color: white;
+}

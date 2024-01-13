@@ -1,0 +1,32 @@
+.statistics {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(51, 133, 133);
+  font-family: Roboto, sans-serif;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.statList {
+  display: flex;
+  background: rgb(49, 39, 52);
+  background: linear-gradient(
+    90deg,
+    rgba(49, 39, 52, 1) 21%,
+    rgba(20, 17, 215, 1) 58%,
+    rgba(11, 92, 35, 1) 83%
+  );
+  gap: 25px;
+  border: 1px solid rgb(206, 171, 171);
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  color: rgb(208, 176, 176);
+}

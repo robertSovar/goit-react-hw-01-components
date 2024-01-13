@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import transactions from '../transactions';
+import styles from '../transactions/TransactionHistory.module.css';
 
 const TransactionHistory = ({ transactionList }) => {
   transactionList = {
@@ -8,7 +9,7 @@ const TransactionHistory = ({ transactionList }) => {
     currency: 'Currency',
   };
   return (
-    <table className="transaction-history">
+    <table className={styles.transactionsHistory}>
       <thead>
         <tr key={generateUniqueNumber()}>
           <th>{transactionList.type}</th>
@@ -18,11 +19,11 @@ const TransactionHistory = ({ transactionList }) => {
       </thead>
       {transactions.map((el, index) => {
         return (
-          <tbody key={index}>
+          <tbody key={index} className={styles.tableBody}>
             <tr key={el.id}>
-              <td>{el.type}</td>
-              <td>{el.amount}</td>
-              <td>{el.currency}</td>
+              <td className={styles.tableData}>{el.type}</td>
+              <td className={styles.tableData}>{el.amount}</td>
+              <td className={styles.tableData}>{el.currency}</td>
             </tr>
           </tbody>
         );
@@ -31,7 +32,7 @@ const TransactionHistory = ({ transactionList }) => {
   );
 };
 
-transactions.propTypes = {
+TransactionHistory.propTypes = {
   id: PropTypes.number,
   type: PropTypes.string,
   amount: PropTypes.number,
