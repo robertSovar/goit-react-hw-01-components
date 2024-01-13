@@ -1,14 +1,20 @@
-import user from '../user.json';
 import PropTypes from 'prop-types';
+import user from '../user.json';
 
-const Profile = () => {
-  const userName = user.username;
-  const userAvatar = user.avatar;
-  const userTag = user.tag;
-  const userLocation = user.location;
-  const followers = user.stats.followers;
-  const views = user.stats.views;
-  const likes = user.stats.likes;
+const Profile = ({
+  userName,
+  userAvatar,
+  userTag,
+  userLocation,
+  followers,
+  views,
+  likes,
+}) => {
+  const statsData = [
+    { label: 'Followers', quantity: followers },
+    { label: 'Views', quantity: views },
+    { label: 'Likes', quantity: likes },
+  ];
 
   return (
     <div className="profile">
@@ -20,18 +26,12 @@ const Profile = () => {
       </div>
 
       <ul className="stats">
-        <li>
-          <span className="label">Followers: </span>
-          <span className="quantity">{followers}</span>
-        </li>
-        <li>
-          <span className="label">Views: </span>
-          <span className="quantity">{views}</span>
-        </li>
-        <li>
-          <span className="label">Likes: </span>
-          <span className="quantity">{likes}</span>
-        </li>
+        {statsData.map((stat, index) => (
+          <li key={index}>
+            <span className="label">{`${stat.label}: `}</span>
+            <span className="quantity">{stat.quantity}</span>
+          </li>
+        ))}
       </ul>
     </div>
   );
@@ -45,6 +45,16 @@ Profile.propTypes = {
   followers: PropTypes.number,
   views: PropTypes.number,
   likes: PropTypes.number,
+};
+
+Profile.defaultProps = {
+  userName: user.username,
+  userAvatar: user.avatar,
+  userTag: user.tag,
+  userLocation: user.location,
+  followers: user.stats.followers,
+  views: user.stats.views,
+  likes: user.stats.likes,
 };
 
 export default Profile;

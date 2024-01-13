@@ -7,9 +7,9 @@ const Statistics = ({ title, stats = data, condition }) => {
       {condition && <h2 className="title">{title}</h2>}
 
       <ul className="stat-list">
-        {stats.map(item => {
+        {stats.map((item, index) => {
           return (
-            <li className="item">
+            <li className="item" key={index}>
               <span className="label">{item.label}</span>
               <span className="percentage">{item.percentage}%</span>
             </li>
