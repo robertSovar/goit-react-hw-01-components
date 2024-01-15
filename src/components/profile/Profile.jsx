@@ -19,21 +19,23 @@ const Profile = ({
 
   return (
     <div className={styles.profile}>
-      <div className={styles.description}>
-        <img src={userAvatar} alt="User avatar" className={styles.avatar} />
-        <p className={styles.name}>{userName}</p>
-        <p className={styles.tag}>{userTag}</p>
-        <p className={styles.location}>{userLocation}</p>
-      </div>
+      <div className={styles.container}>
+        <div className={styles.description}>
+          <img src={userAvatar} alt="User avatar" className={styles.avatar} />
+          <p className={styles.name}>{userName}</p>
+          <p className={styles.tag}>{userTag}</p>
+          <p className={styles.location}>{userLocation}</p>
+        </div>
 
-      <ul className={styles.stats}>
-        {statsData.map((stat, index) => (
-          <li key={index}>
-            <span className={styles.label}>{`${stat.label}: `}</span>
-            <span className={styles.quantity}>{stat.quantity}</span>
-          </li>
-        ))}
-      </ul>
+        <ul className={styles.stats}>
+          {statsData.map((stat, index) => (
+            <li key={index}>
+              <span className={styles.label}>{`${stat.label}: `}</span>
+              <span className={styles.quantity}>{stat.quantity}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
